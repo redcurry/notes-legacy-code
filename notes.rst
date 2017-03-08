@@ -33,3 +33,21 @@ Wrap Class
 * Another way is to create a class that accepts the original class,
   then a method in the new class calls the original class's method,
   and then calls the new functionality (in a new method)
+
+Chapter 7
+---------
+
+* Break up software into small, well-named, understandable pieces
+
+* You should be able to compile every class or module in your system
+  separately from the others and in its own test harness
+
+* The first step in breaking a dependency is to try to instantiate
+  the class (or classes in a cluster) in question in a test harness
+
+* Look at everything that depends on the class(es) in question
+  (used outside of the cluster of classes),
+  then extract an interface for the class(es) and use those instead
+  (Dependency Inversion)
+
+* Move the class(es) to a new library
