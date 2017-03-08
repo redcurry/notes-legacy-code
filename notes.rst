@@ -51,3 +51,28 @@ Chapter 7
   (Dependency Inversion)
 
 * Move the class(es) to a new library
+
+Chapter 8
+---------
+
+* Steps in TDD:
+
+  1. Write a failing test
+  2. Get it to compile
+  3. Make it pass
+  4. Remove duplication (or refactor)
+  5. Repeat
+
+* One way to quickly test and implement a new feature
+  is to derive from the original class and override
+  the method with the functionality of interest
+
+* Then, refactor the classes to get rid of the inheritance,
+  which can be problematic if used a lot
+
+* According to the Liskov Substitution Principle (LSP),
+  objects of subclasses should be substitutable for objects
+  of their superclasses
+
+* To help follow LSP, do not override concrete methods
+  (those that already contain code); instead, override abstract methods
