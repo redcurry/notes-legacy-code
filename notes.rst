@@ -76,3 +76,59 @@ Chapter 8
 
 * To help follow LSP, do not override concrete methods
   (those that already contain code); instead, override abstract methods
+
+Chapter 9
+---------
+
+Constructors
+............
+
+* For constructor with many parameters, you can
+  replace with an interface (create one, if necessary),
+  or pass null
+
+  - Me: But passing null may fail if ctor checks for it
+
+* If the constructor of a class instantiates an object
+  (a hidden dependency), you can create a new constructor
+  that takes an instance of the dependency (or an interface),
+  and have the original constructor call that with a new object.
+  Your test code can call the new constructor with a fake,
+  while the production code continues to call the original ctor.
+
+* Another solution is to let the constructor create the object,
+  but then replace it by creating a new method that replaces it
+
+Singletons
+..........
+
+* When working with a singleton, you can add a static method
+  to the singleton that allows you to replace the instance
+
+* However, this requires that the singleton constructor be public
+
+* If you can't make the constructor public,
+  you can derive from it and override the heavy methods
+  (e.g., those that access a database)
+
+* If a new singleton's instance is needed between tests,
+  you can add a "reset" method to the singleton,
+  which sets the instance to null
+
+* One can also replace the singleton with an interface,
+  and update all uses of the singleton with the interface
+
+Parameters
+..........
+
+* "Extract interface" works most of the time
+  to replace concrete parameters, but it's problematic
+  when the parameter class inherits from a parent class
+
+* Solution is to create the interface
+  and include the parent class's methods,
+  and have the parameter class implement it
+  by calling its parent's method (see p. 132)
+
+* Another option is to subclass the parameter class
+  and replace the heavy method with something else
