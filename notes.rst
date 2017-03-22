@@ -152,3 +152,22 @@ Chapter 10
   (in the test, we pass a fake wrapper)
 
 * A method should be a command or a query, not both
+
+Chapter 11
+----------
+
+Effects
+.......
+
+* To understand how changing a method will affect
+  the rest of the program, we need to create "effect sketches"
+
+* Make a list of all the things that can be changed
+  after an object is created that would affect results
+  returned by any of its methods
+
+* For example, someone could add/remove elements of a list property
+  or someone could change any of the items in that list
+
+* Figure out the places were properties are modified
+  after the object is created
