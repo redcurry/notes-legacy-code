@@ -132,3 +132,23 @@ Parameters
 
 * Another option is to subclass the parameter class
   and replace the heavy method with something else
+
+Chapter 10
+----------
+
+* If a method doesn't use instance data,
+  it can be turned into a static method for testing
+
+* If a method is too long, it can be extracted to a class
+
+* If a method is private and needs to be tested,
+  move to a new class and make the method(s) public,
+  then the original class can create an instance of it
+
+* Never depend directly on libraries that are outside of our control
+
+* When there's a method parameter we can't change,
+  we can replace it with an interface and pass a wrapper
+  (in the test, we pass a fake wrapper)
+
+* A method should be a command or a query, not both
