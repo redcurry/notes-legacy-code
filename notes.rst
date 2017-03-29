@@ -171,3 +171,69 @@ Effects
 
 * Figure out the places were properties are modified
   after the object is created
+
+Chapter 20
+----------
+
+* Every class should have a single responsibility,
+  and there should be only one reason to change it
+
+* Find the responsibilities of a big class
+  by grouping related methods together
+
+* Ask yourself, "Why is this method here?" and
+  "What is it doing for the class?"
+
+* A class that has many private or protected methods
+  may indicate that it has more than one responsibility
+
+* Extract methods for decisions made (e.g., talking to a database)
+  or hard-coded information; this can make grouping easier
+
+* Find relationships between methods and instance variables;
+  usually there is "lumping," which can be a sign of a group
+
+* To find "lumps," draw circles for each variable and method,
+  then draw a line if a method uses the variable,
+  then notice any clustering, which may indicate
+  separate responsibilities; but it may not,
+  so try a different clustering
+
+* Describe the key responsibility of a class;
+  other responsibilities should be factored out into other classes
+
+* Two ways to violate the single responsibility principle:
+  (1) interface level or (2) implementation level
+
+* For interface level, a class may appear to have many responsibilities
+  when its interface has many methods
+
+* For implementation level, a class really does all the things
+  declared by its interface
+
+* We care most about implementation level violation;
+  interface level is not too bad because the class is a facade
+
+* If we need to simplify at the interface level,
+  the client could use some delegate classes directly
+
+* One can use Interface Segregation to create interfaces
+  for groupings in a class, so that clients only use
+  the interface they need
+
+* Then, to split up the large class, one can create an implementation
+  of one of its interfaces, and pass the large class to the implementation;
+  the large class does not need to have that interface anymore
+  and the methods can be removed from it;
+  essentially, you move certain behaviors out of the large class
+  into a separate class, which uses the original class to implement
+  the behaviors
+
+* When modifying a class, that change may represent
+  a new responsibility and may be best to put it in a separate class
+
+* Read books on design patterns, read other people's code,
+  and look at open-source projects
+
+* When refactoring, start at the implementation level,
+  then slowly move to interface level
