@@ -161,6 +161,7 @@ Effects
 
 * To understand how changing a method will affect
   the rest of the program, we need to create "effect sketches"
+  (see simple example on p. 159)
 
 * Make a list of all the things that can be changed
   after an object is created that would affect results
@@ -171,6 +172,20 @@ Effects
 
 * Figure out the places were properties are modified
   after the object is created
+
+Reasoning Forward
+.................
+
+* Using effect sketches, we can figure out what will change
+  downstream if we make a change
+
+* Remember to not count methods that don't change behavior
+  when the item being looked at could change
+
+* Look not only at changes within a class,
+  but also changes to other classes
+
+* Also look at superclasses and subclasses that may be affected
 
 Chapter 20
 ----------
