@@ -187,6 +187,16 @@ Reasoning Forward
 
 * Also look at superclasses and subclasses that may be affected
 
+(Remaining sections)
+....................
+
+* A method may modify one of its parameters or a static variable,
+  so consider these as effects as well
+
+* In good code, there are clear rules (explicit or implicit)
+  that constrain you whether something can be or should be changed;
+  these rules make it easier to think about code
+
 Chapter 20
 ----------
 
